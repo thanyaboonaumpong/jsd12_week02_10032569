@@ -47,6 +47,6 @@ const userOrder = {
   status: "Processing"
 };
 
-// ลองให้ระบบแสดงผลดู (Console log)
+// ลองให้ระบบแสดงผล (Console log)
 console.log("Cart Data:", shoppingCart);
 console.log("Order Details:", userOrder);
