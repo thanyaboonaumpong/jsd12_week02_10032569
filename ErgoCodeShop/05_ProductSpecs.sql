@@ -1,3 +1,4 @@
+-- Clear existing data to prevent duplication
 TRUNCATE TABLE ProductSpecs RESTART IDENTITY CASCADE;
 
 -- 1. สูตรการประกอบรุ่น ErgoPro-X1 Mesh (item_id 1)
