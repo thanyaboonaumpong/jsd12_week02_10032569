@@ -23,14 +23,14 @@ CREATE TABLE Components (
     supplier_id INTEGER REFERENCES Suppliers(supplier_id)
 );
 
--- 4. ตารางรุ่นเก้าอี้ (แทน MenuItems)
+-- 4. ตารางรุ่นเก้าอี้ (แก้ไขชื่อคอลัมน์เป็น name)
 CREATE TABLE Products (
     product_id SERIAL PRIMARY KEY,
-    model_name VARCHAR(255) NOT NULL UNIQUE, -- เช่น ErgoPro-X1
-    description TEXT, -- ใส่สรรพคุณการรับน้ำหนัก/การปรับระดับ
+    name VARCHAR(255) NOT NULL UNIQUE, -- แก้จาก model_name เป็น name
+    description TEXT,
     price DECIMAL(10, 2) NOT NULL,
-    category VARCHAR(50), -- เช่น High-back, Mid-back, Gaming
-    warranty_years INTEGER DEFAULT 3 -- เพิ่มพาร์ทประกันสำหรับเก้าอี้สุขภาพ
+    category VARCHAR(50),
+    warranty_years INTEGER DEFAULT 3
 );
 
 -- 5. ตารางสเปคเก้าอี้ (แทน RecipeItems)
@@ -60,10 +60,10 @@ CREATE TABLE Orders (
     staff_id INTEGER REFERENCES Staff(staff_id) -- พนักงานที่ดูแลเคสนี้
 );
 
--- 8. รายการเก้าอี้ในออเดอร์ (คงเดิมแต่เปลี่ยนชื่อตาราง)
+-- 8. รายการเก้าอี้ในออเดอร์ (แก้ไขชื่อคอลัมน์เป็น item_id ค๊ะ)
 CREATE TABLE OrderItems (
     order_item_id SERIAL PRIMARY KEY,
     order_id INTEGER NOT NULL REFERENCES Orders(order_id),
-    product_id INTEGER NOT NULL REFERENCES Products(product_id),
+    item_id INTEGER NOT NULL REFERENCES Products(product_id), --
     quantity INTEGER NOT NULL
 );

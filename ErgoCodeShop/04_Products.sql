@@ -1,3 +1,5 @@
+-- 04_Products
+TRUNCATE TABLE Products RESTART IDENTITY CASCADE;
 INSERT INTO Products (product_id, name, description, price, category) VALUES
 (1, 'ErgoPro-X1 Mesh', 'Premium 4D adjustable mesh chair for long-working hours', 15900.00, 'Ergonomic Chair'),
 (2, 'ComfortBack-Z Leather', 'Genuine leather chair with lumbar support', 18500.00, 'Ergonomic Chair'),

@@ -22,3 +22,13 @@ INSERT INTO ProductSpecs (product_id, component_id, quantity_used) VALUES
 INSERT INTO ProductSpecs (product_id, component_id, quantity_used) VALUES
 (5, 7, 1.0), -- ใช้ฐาน Nylon
 (5, 10, 0.05); -- ใช้สกรูนิดหน่อย
+
+-- 5.5_Customers (ต้องมีลูกค้าก่อนถึงจะสั่งซื้อได้ค๊ะ!)
+TRUNCATE TABLE Customers RESTART IDENTITY CASCADE;
+
+INSERT INTO Customers (customer_id, first_name, last_name, email, address) VALUES
+(1, 'Niti', 'Developer', 'niti@ergocode.com', '123 Coding Street, Bangkok'),
+(2, 'Somsak', 'Richman', 'somsak@email.com', '456 Furniture Lane, Nonthaburi'),
+(3, 'Jane', 'Doe', 'jane.doe@email.com', '789 Minimalist Rd, Samut Prakan'),
+(4, 'John', 'Smith', 'john.s@email.com', '321 Ergonomic Ave, Pathum Thani'),
+(5, 'Aria', 'Stark', 'aria.s@email.com', '555 Winterfell St, Chiang Mai');
